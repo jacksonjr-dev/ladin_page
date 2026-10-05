@@ -151,8 +151,8 @@
   .footer-brand-block p { margin: 15px 0; }
   .footer-column { font-size: 13px; gap: 6px; }
   .footer-column h3 { font-size: 12px; margin: 0 0 6px; }
-  .footer-icon-link, .footer-placeholder > span { padding: 8px 0; }
-  .footer-phone { font-size: 12px; margin-top: -6px; }
+.footer-icon-link, .footer-placeholder > span, .footer-column > a { padding: 8px 0; }
+  .footer-phone { font-size: 12px; margin-top: -6px; padding-left: 25px; }
   .footer-placeholder small { font-size: 9px; }
   .footer-bottom { align-items: flex-start; flex-direction: column; justify-content: center; gap: 14px; padding: 22px 0; font-size: 10px; }
 }
