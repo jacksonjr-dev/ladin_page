@@ -132,15 +132,29 @@
   .contact-description { max-width: 100%; }
   .direct-contact { max-width: 100%; margin-top: 25px; }
   .contact-form { padding: 22px 18px; }
-  .form-heading h2 { font-size: 15px; }
-  .fields-grid { gap: 18px 12px; }
-  .contact-input, .contact-textarea { font-size: 12px; }
-  .form-bottom { gap: 18px; }
-  .footer-inner { padding: 39px 22px 0; }
+  .form-heading { flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .form-heading h2 { font-size: 17px; line-height: 1.4; }
+  .coming-soon { font-size: 10px; }
+  .fields-grid { grid-template-columns: 1fr; gap: 16px; }
+  .contact-form label { font-size: 12px; }
+  /* 16px input text avoids iOS Safari auto-zoom on focus */
+  .contact-input, .contact-textarea { font-size: 16px; }
+  .contact-input { height: 48px; margin-top: 7px; }
+  .contact-textarea { min-height: 120px; padding: 12px; }
+  .form-bottom { margin-top: 20px; flex-direction: column-reverse; align-items: stretch; gap: 14px; }
+  .form-status { font-size: 11px; justify-content: center; }
+  .submit-button { width: 100%; height: 50px; font-size: 14px; }
+  .contact-note { font-size: 11px; }
+  .footer-inner { padding: 40px 22px 0; }
   .footer-main { grid-template-columns: 1fr 1fr; gap: 34px 22px; }
   .footer-brand-block { grid-column: 1 / -1; }
   .footer-brand-block p { margin: 15px 0; }
-  .footer-bottom { align-items: flex-start; flex-direction: column; justify-content: center; gap: 14px; padding: 22px 0; }
+  .footer-column { font-size: 13px; gap: 6px; }
+  .footer-column h3 { font-size: 12px; margin: 0 0 6px; }
+.footer-icon-link, .footer-placeholder > span, .footer-column > a { padding: 8px 0; }
+  .footer-phone { font-size: 12px; margin-top: -6px; padding-left: 25px; }
+  .footer-placeholder small { font-size: 9px; }
+  .footer-bottom { align-items: flex-start; flex-direction: column; justify-content: center; gap: 14px; padding: 22px 0; font-size: 10px; }
 }
 @media (prefers-reduced-motion: no-preference) {
   .contact-layout { animation: reveal 500ms ease-out both; }
