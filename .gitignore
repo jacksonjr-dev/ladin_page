@@ -30,3 +30,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local tooling (not needed to run the site)
+.claude/
+skills-lock.json
