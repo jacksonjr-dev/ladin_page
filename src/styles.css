@@ -24,24 +24,25 @@
   --radius-md: 6px;
 }
 :root {
-  --background: oklch(0.985 0.003 250);
-  --foreground: oklch(0.25 0.055 257);
-  --primary: oklch(0.52 0.17 254);
+  --background: oklch(0.20 0.042 257);
+  --foreground: oklch(0.97 0.007 252);
+  --primary: oklch(0.66 0.18 254);
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.93 0.012 252);
-  --secondary-foreground: oklch(0.55 0.03 252);
-  --muted: oklch(0.955 0.006 252);
-  --muted-foreground: oklch(0.54 0.024 253);
-  --accent: oklch(0.945 0.02 250);
-  --border: oklch(0.90 0.01 252);
-  --footer: oklch(0.215 0.056 256);
+  --secondary: oklch(0.31 0.045 257);
+  --secondary-foreground: oklch(0.76 0.026 252);
+  --muted: oklch(0.25 0.042 257);
+  --muted-foreground: oklch(0.76 0.026 253);
+  --accent: oklch(0.31 0.065 254);
+  --border: oklch(0.36 0.04 257);
+  --footer: oklch(0.165 0.04 256);
   --footer-text: oklch(0.78 0.025 253);
   --footer-heading: oklch(0.98 0.005 252);
-  --footer-muted: oklch(0.63 0.034 254);
+  --footer-muted: oklch(0.72 0.028 254);
   --footer-border: oklch(0.34 0.044 256);
   --signal: oklch(0.75 0.16 157);
-  --form-surface: oklch(1 0 0);
-  --form-shadow: 0 12px 40px oklch(0.25 0.05 256 / 0.035);
+  --form-surface: oklch(0.245 0.044 257);
+  --form-shadow: 0 12px 40px oklch(0.10 0.025 256 / 0.24);
+  color-scheme: dark;
 }
 @layer base {
   * { border-color: var(--border); box-sizing: border-box; }
