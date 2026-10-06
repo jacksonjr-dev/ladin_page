@@ -6,7 +6,7 @@ const WHATSAPP_MESSAGE =
 
 const INSTAGRAM_HANDLE = "Jdg_sistems";
 
-const whatsappLink = (text: string) =>
+export const whatsappLink = (text: string) =>
   `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(text)}`;
 
 export const contact = {

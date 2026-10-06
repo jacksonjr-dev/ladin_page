@@ -34,3 +34,5 @@ dist-ssr
 # Local tooling (not needed to run the site)
 .claude/
 skills-lock.json
+
+.vercel

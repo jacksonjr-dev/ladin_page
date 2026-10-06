@@ -35,10 +35,12 @@ export function CtaBand({
   text = "Conte o que sua empresa precisa. Vamos pensar juntos no próximo passo.",
   label,
   to,
+  message,
 }: {
   title?: string;
   text?: string;
   label?: string;
+  message?: string;
   to?: "/solucoes" | "/como-trabalhamos" | "/contato";
 }) {
   return (
@@ -56,7 +58,7 @@ export function CtaBand({
             </Link>
           </Button>
         ) : (
-          <WhatsAppButton {...(label ? { label } : {})} />
+          <WhatsAppButton {...(label ? { label } : {})} {...(message ? { message } : {})} />
         )}
       </Reveal>
     </section>

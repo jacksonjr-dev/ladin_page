@@ -9,11 +9,13 @@ export function PageHero({
   title,
   description,
   children,
+  long = false,
 }: {
   eyebrow: string;
   title: ReactNode;
   description: string;
   children?: ReactNode;
+  long?: boolean;
 }) {
   return (
     <section className="hero-stage page-hero" aria-labelledby="page-title">
@@ -22,7 +24,11 @@ export function PageHero({
         <p className="eyebrow rise" style={rise(0)}>
           {eyebrow}
         </p>
-        <h1 id="page-title" className="display-title rise" style={rise(1)}>
+        <h1
+          id="page-title"
+          className={`display-title rise${long ? " is-long" : ""}`}
+          style={rise(1)}
+        >
           {title}
         </h1>
         <p className="lead rise" style={rise(2)}>

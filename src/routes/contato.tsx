@@ -5,6 +5,7 @@ import { FlowField } from "@/components/flow-field";
 import { rise } from "@/components/page-hero";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { contact } from "@/lib/contact";
+import { pageHead } from "@/lib/seo";
 
 const TITLE = "Contato | JPGLabs";
 const DESCRIPTION =
@@ -12,12 +13,7 @@ const DESCRIPTION =
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-    ],
+    ...pageHead({ path: "/contato", title: TITLE, description: DESCRIPTION }),
   }),
   component: ContactPage,
 });

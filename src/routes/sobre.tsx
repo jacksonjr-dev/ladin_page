@@ -2,18 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CardGrid, Faq } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand, Section } from "@/components/section";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/sobre")({
-  head: () => ({
-    meta: [
-      { title: "Sobre nós | JPGLabs" },
-      {
-        name: "description",
-        content:
-          "Conheça a JPGLabs: o que nos move, como pensamos tecnologia e os valores que guiam cada projeto.",
-      },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      path: "/sobre",
+      title: "Sobre nós | JPGLabs",
+      description:
+        "Conheça a JPGLabs: o que nos move, como pensamos tecnologia e os valores que guiam cada projeto.",
+    }),
   component: AboutPage,
 });
 

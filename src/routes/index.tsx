@@ -7,6 +7,7 @@ import { CtaBand, Section } from "@/components/section";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { steps } from "@/lib/process";
 import { solutions } from "@/lib/solutions";
+import { organizationJsonLd, pageHead } from "@/lib/seo";
 
 const TITLE = "JPGLabs | Automações, sistemas e sites para a sua empresa";
 const DESCRIPTION =
@@ -14,12 +15,8 @@ const DESCRIPTION =
 
 export const Route = createFileRoute("/")({
   head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-    ],
+    ...pageHead({ path: "/", title: TITLE, description: DESCRIPTION }),
+    scripts: [{ type: "application/ld+json", children: organizationJsonLd(DESCRIPTION) }],
   }),
   component: HomePage,
 });
@@ -125,14 +122,14 @@ function HomePage() {
         intro="Seis soluções para começar. Cada uma resolve um tipo de problema, e muitas podem ser conectadas entre si."
       >
         <RevealList className="solutions">
-          {solutions.map(({ id, icon: Icon, title, text }) => (
+          {solutions.map(({ id, slug, icon: Icon, title, text }) => (
             <RevealItem key={id} className="solution">
               <span className="solution-icon">
                 <Icon size={24} aria-hidden="true" />
               </span>
               <h3>{title}</h3>
               <p>{text}</p>
-              <Link to="/solucoes" hash={id} className="solution-link">
+              <Link to="/solucoes/$slug" params={{ slug }} className="solution-link">
                 Saiba mais<span className="sr-only"> sobre {title}</span>
                 <ArrowRight size={14} aria-hidden="true" />
               </Link>

@@ -4,18 +4,16 @@ import { RevealItem, RevealList } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand, Section } from "@/components/section";
 import { principles, steps } from "@/lib/process";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/como-trabalhamos")({
-  head: () => ({
-    meta: [
-      { title: "Como trabalhamos | JPGLabs" },
-      {
-        name: "description",
-        content:
-          "Veja o passo a passo da JPGLabs, da primeira conversa até a solução funcionando: o que acontece em cada etapa, o que você faz e o que recebe.",
-      },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      path: "/como-trabalhamos",
+      title: "Como trabalhamos | JPGLabs",
+      description:
+        "Veja o passo a passo da JPGLabs, da primeira conversa até a solução funcionando: o que acontece em cada etapa, o que você faz e o que recebe.",
+    }),
   component: HowWeWorkPage,
 });
 

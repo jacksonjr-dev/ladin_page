@@ -1,22 +1,20 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import { Checklist, Faq } from "@/components/blocks";
+import { Faq } from "@/components/blocks";
 import { RevealItem, RevealList } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand, Section } from "@/components/section";
 import { solutions } from "@/lib/solutions";
+import { pageHead } from "@/lib/seo";
 
-export const Route = createFileRoute("/solucoes")({
-  head: () => ({
-    meta: [
-      { title: "Soluções | JPGLabs" },
-      {
-        name: "description",
-        content:
-          "Automação de WhatsApp, sistemas de gestão, agendamento online, dashboards, sites e assistentes com IA: veja para que serve cada solução da JPGLabs.",
-      },
-    ],
-  }),
+export const Route = createFileRoute("/solucoes/")({
+  head: () =>
+    pageHead({
+      path: "/solucoes",
+      title: "Soluções para empresas: WhatsApp, sistemas e IA | JPGLabs",
+      description:
+        "Automação de WhatsApp, sistemas de gestão, agendamento online, dashboards, sites e assistentes com IA: veja o que cada solução da JPGLabs faz.",
+    }),
   component: SolutionsPage,
 });
 
@@ -71,14 +69,14 @@ function SolutionsPage() {
         intro="Escolha por onde começar ou conte o seu desafio. Também montamos soluções sob medida."
       >
         <RevealList className="solutions">
-          {solutions.map(({ id, icon: Icon, title, text }) => (
+          {solutions.map(({ id, slug, icon: Icon, title, text }) => (
             <RevealItem key={id} className="solution">
               <span className="solution-icon">
                 <Icon size={24} aria-hidden="true" />
               </span>
               <h3>{title}</h3>
               <p>{text}</p>
-              <Link to="/solucoes" hash={id} className="solution-link">
+              <Link to="/solucoes/$slug" params={{ slug }} className="solution-link">
                 Ver detalhes<span className="sr-only"> de {title}</span>
                 <ArrowRight size={14} aria-hidden="true" />
               </Link>
@@ -86,28 +84,6 @@ function SolutionsPage() {
           ))}
         </RevealList>
       </Section>
-      {solutions.map(({ id, icon: Icon, title, forWho, benefits, example }) => (
-        <section key={id} id={id} className="section detail" aria-labelledby={`${id}-title`}>
-          <div className="section-inner detail-grid">
-            <div className="detail-intro">
-              <span className="solution-icon">
-                <Icon size={24} aria-hidden="true" />
-              </span>
-              <h2 id={`${id}-title`}>{title}</h2>
-              <h3 className="detail-label">Para quem é</h3>
-              <p>{forWho}</p>
-            </div>
-            <div className="detail-body">
-              <h3 className="detail-label">O que muda no dia a dia</h3>
-              <Checklist items={benefits} />
-              <div className="example">
-                <h3 className="detail-label">Exemplo ilustrativo</h3>
-                <p>{example}</p>
-              </div>
-            </div>
-          </div>
-        </section>
-      ))}
       <Section id="faq-title" title="Perguntas frequentes">
         <Faq items={faq} />
       </Section>
