@@ -58,7 +58,7 @@ const faq = [
   {
     question: "Como posso falar com a equipe?",
     answer:
-      "Pelo WhatsApp, que é o nosso canal oficial de contato. A página de Contato tem o número e uma mensagem inicial já pronta.",
+      "Pelo WhatsApp ou pelo Instagram. A página de Contato tem o número do WhatsApp e uma mensagem inicial já pronta.",
   },
 ];
 
@@ -93,8 +93,8 @@ function AboutPage() {
 
       <Section
         id="signature-title"
-        title="Ideias. Processos. Soluções."
-        intro="É a nossa assinatura e também a ordem em que pensamos cada projeto."
+        title="Nossa assinatura, na prática"
+        intro="Ideias, processos e soluções: a ordem em que cada projeto acontece."
       >
         <CardGrid
           items={[
@@ -108,7 +108,7 @@ function AboutPage() {
             },
             {
               title: "Soluções",
-              text: "Construímos e entregamos o que resolve, acompanhando você até a solução funcionar no dia a dia.",
+              text: "Construímos e entregamos o que resolve, acompanhando você na fase inicial de uso no dia a dia.",
             },
           ]}
         />
@@ -125,7 +125,12 @@ function AboutPage() {
       <Section id="faq-title" title="Perguntas frequentes">
         <Faq items={faq} />
       </Section>
-      <CtaBand />
+      <CtaBand
+        title="Quer ver o que podemos construir?"
+        text="Conheça as soluções da JPGLabs e veja qual combina com o seu dia a dia."
+        label="Ver soluções"
+        to="/solucoes"
+      />
     </main>
   );
 }

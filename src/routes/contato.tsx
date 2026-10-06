@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, MessageCircle } from "lucide-react";
+import { ArrowUpRight, Instagram, MessageCircle } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { FlowField } from "@/components/flow-field";
 import { rise } from "@/components/page-hero";
@@ -8,7 +8,7 @@ import { contact } from "@/lib/contact";
 
 const TITLE = "Contato | JPGLabs";
 const DESCRIPTION =
-  "Converse com a JPGLabs sobre soluções para sua empresa. Entre em contato pelo nosso WhatsApp oficial.";
+  "Converse com a JPGLabs sobre soluções para sua empresa. Fale com a gente pelo WhatsApp ou pelo Instagram.";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
@@ -53,6 +53,23 @@ function ContactPage() {
               <span>
                 <span className="direct-label">Nosso WhatsApp oficial</span>
                 <span className="direct-number">{contact.whatsappLabel}</span>
+              </span>
+              <ArrowUpRight size={15} aria-hidden="true" />
+              <span className="sr-only"> (abre em nova aba)</span>
+            </a>
+            <a
+              className="direct-contact rise"
+              style={rise(4)}
+              href={contact.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="direct-icon">
+                <Instagram size={20} aria-hidden="true" />
+              </span>
+              <span>
+                <span className="direct-label">Nosso Instagram</span>
+                <span className="direct-number">{contact.instagramHandle}</span>
               </span>
               <ArrowUpRight size={15} aria-hidden="true" />
               <span className="sr-only"> (abre em nova aba)</span>

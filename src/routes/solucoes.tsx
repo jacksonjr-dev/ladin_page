@@ -22,14 +22,24 @@ export const Route = createFileRoute("/solucoes")({
 
 const faq = [
   {
+    question: "Como saber qual solução é a certa para mim?",
+    answer:
+      "Comece pelo problema, não pela ferramenta. Conte o que mais atrapalha o dia a dia e indicamos qual solução resolve isso primeiro. Muitas vezes a resposta é uma só.",
+  },
+  {
     question: "Posso contratar só uma das soluções?",
     answer:
-      "Sim. Cada solução funciona sozinha. Muitas empresas começam por uma e, conforme o resultado, ligam as outras. Um agendamento online, por exemplo, pode depois conversar com o WhatsApp e com o painel de relatórios.",
+      "Sim. Cada solução funciona sozinha. Você pode começar por uma e, conforme o resultado, conectar as outras.",
+  },
+  {
+    question: "As soluções podem funcionar juntas?",
+    answer:
+      "Muitas podem. Um agendamento online, por exemplo, pode enviar lembretes pelo WhatsApp e alimentar um painel de relatórios. Avaliamos caso a caso o que faz sentido conectar.",
   },
   {
     question: "Preciso trocar as ferramentas que já uso?",
     answer:
-      "Não necessariamente. Primeiro entendemos o que a empresa já usa e só propomos trocar algo quando isso trouxer ganho real. Sempre que possível, conectamos o que existe.",
+      "Não necessariamente. Primeiro entendemos o que você já usa e só propomos trocar algo quando isso trouxer ganho real. Sempre que possível, conectamos o que já existe.",
   },
   {
     question: "Vocês fazem soluções sob medida?",
@@ -37,14 +47,9 @@ const faq = [
       "Sim. As seis soluções acima são pontos de partida. Se o seu processo pede algo diferente, conversamos e desenhamos a solução em torno dele.",
   },
   {
-    question: "Quanto custa e quanto tempo leva?",
+    question: "Quanto custa uma solução?",
     answer:
-      "Depende do tamanho do que será feito. Depois da primeira conversa, apresentamos a proposta com escopo, prazo e valores antes de qualquer compromisso.",
-  },
-  {
-    question: "Preciso entender de tecnologia?",
-    answer:
-      "Não. Explicamos tudo em linguagem direta e deixamos claro o que você precisa fazer em cada etapa.",
+      "Depende do tamanho do que será feito. Depois da primeira conversa, apresentamos a proposta com o que será feito, o prazo e os valores antes de qualquer compromisso.",
   },
 ];
 
@@ -74,7 +79,7 @@ function SolutionsPage() {
               <h3>{title}</h3>
               <p>{text}</p>
               <Link to="/solucoes" hash={id} className="solution-link">
-                Ver detalhes
+                Ver detalhes<span className="sr-only"> de {title}</span>
                 <ArrowRight size={14} aria-hidden="true" />
               </Link>
             </RevealItem>
@@ -96,7 +101,7 @@ function SolutionsPage() {
               <h3 className="detail-label">O que muda no dia a dia</h3>
               <Checklist items={benefits} />
               <div className="example">
-                <h3 className="detail-label">Exemplo de uso</h3>
+                <h3 className="detail-label">Exemplo ilustrativo</h3>
                 <p>{example}</p>
               </div>
             </div>
@@ -106,7 +111,11 @@ function SolutionsPage() {
       <Section id="faq-title" title="Perguntas frequentes">
         <Faq items={faq} />
       </Section>
-      <CtaBand />
+      <CtaBand
+        title="Não achou exatamente o que precisa?"
+        text="Conte como funciona o seu processo. Dizemos qual solução faz sentido ou desenhamos uma sob medida."
+        label="Falar sobre o meu caso"
+      />
     </main>
   );
 }

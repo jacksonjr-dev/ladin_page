@@ -1,5 +1,8 @@
+import { Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { Reveal } from "@/components/reveal";
+import { Button } from "@/components/ui/button";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 
 export function Section({
@@ -26,26 +29,35 @@ export function Section({
   );
 }
 
-// Used where real content doesn't exist yet: says so plainly and offers the one working channel.
-export function EmptyState({ title, text }: { title: string; text: string }) {
-  return (
-    <Reveal className="empty-state">
-      <h3>{title}</h3>
-      <p>{text}</p>
-      <WhatsAppButton label="Falar com a JPGLabs" />
-    </Reveal>
-  );
-}
-
-export function CtaBand() {
+/** Closing call to action. Each page passes its own wording; "to" links inside the site instead of WhatsApp. */
+export function CtaBand({
+  title = "Tem um desafio em mente?",
+  text = "Conte o que sua empresa precisa. Vamos pensar juntos no próximo passo.",
+  label,
+  to,
+}: {
+  title?: string;
+  text?: string;
+  label?: string;
+  to?: "/solucoes" | "/como-trabalhamos" | "/contato";
+}) {
   return (
     <section className="section" aria-labelledby="cta-title">
       <Reveal className="section-inner cta-band">
         <div>
-          <h2 id="cta-title">Tem um desafio em mente?</h2>
-          <p>Conte o que sua empresa precisa. Vamos pensar juntos no próximo passo.</p>
+          <h2 id="cta-title">{title}</h2>
+          <p>{text}</p>
         </div>
-        <WhatsAppButton />
+        {to ? (
+          <Button asChild size="lg" className="whatsapp-button">
+            <Link to={to}>
+              {label}
+              <ArrowRight aria-hidden="true" />
+            </Link>
+          </Button>
+        ) : (
+          <WhatsAppButton {...(label ? { label } : {})} />
+        )}
       </Reveal>
     </section>
   );

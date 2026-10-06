@@ -99,7 +99,7 @@ export function ContactForm() {
             autoComplete="email"
             inputMode="email"
             spellCheck={false}
-            placeholder="voce@empresa.com…"
+            placeholder="voce@empresa.com"
             className="contact-input"
             maxLength={150}
           />
@@ -112,7 +112,7 @@ export function ContactForm() {
             type="tel"
             autoComplete="tel"
             inputMode="tel"
-            placeholder="(00) 00000-0000…"
+            placeholder="(85) 99999-9999"
             className="contact-input"
             maxLength={30}
           />

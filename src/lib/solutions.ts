@@ -27,13 +27,13 @@ export const solutions: Solution[] = [
     forWho:
       "Empresas que recebem muitas mensagens e gastam tempo respondendo sempre as mesmas perguntas.",
     benefits: [
-      "Respostas imediatas às dúvidas mais comuns, a qualquer hora do dia",
+      "Respostas rápidas às dúvidas mais comuns, a qualquer hora do dia",
       "Coleta de nome, interesse e dados do cliente antes de uma pessoa entrar na conversa",
       "Direcionamento para a pessoa ou o setor certo",
       "Menos mensagens perdidas e menos trabalho repetitivo para a equipe",
     ],
     example:
-      "Um cliente pergunta o horário de funcionamento e pede um orçamento. O fluxo responde o horário, pergunta o que ele precisa, registra os dados e avisa a equipe com tudo organizado.",
+      "Uma loja recebe, em uma noite, uma dúvida sobre horário e um pedido de orçamento. O atendimento automático responde o horário na hora, pergunta o produto e a quantidade, guarda os dados do cliente e, de manhã, a equipe encontra o pedido organizado, pronto para ser respondido.",
   },
   {
     id: "gestao",
@@ -49,7 +49,7 @@ export const solutions: Solution[] = [
       "Permissões por pessoa, para cada um ver só o que precisa",
     ],
     example:
-      "Uma empresa de serviços registra a ordem de serviço, atribui ao responsável e acompanha cada etapa até a conclusão, sem planilhas paralelas.",
+      "Uma empresa de manutenção anota as ordens de serviço em planilha e no caderno. No sistema, cada chamado ganha cliente, endereço, responsável e status, e quem está no escritório vê na hora o que está aberto, em andamento e concluído.",
   },
   {
     id: "agendamento",
@@ -62,10 +62,10 @@ export const solutions: Solution[] = [
       "O cliente escolhe sozinho entre os horários disponíveis",
       "Confirmação e lembretes enviados pelo WhatsApp",
       "Controle de cancelamentos e remarcações",
-      "Menos faltas e menos idas e vindas para combinar horário",
+      "Lembretes que ajudam a reduzir faltas e evitam idas e vindas para combinar horário",
     ],
     example:
-      "O cliente abre o link, escolhe o serviço e o horário, recebe a confirmação no WhatsApp e um lembrete antes do atendimento. Se precisar remarcar, faz isso sem ligar.",
+      "Um salão atende com hora marcada pelo WhatsApp. Com o agendamento online, o cliente abre o link, escolhe o serviço e o horário livre e recebe a confirmação. Na véspera chega um lembrete, e se precisar remarcar ele mesmo faz isso, sem ligar.",
   },
   {
     id: "dashboards",
@@ -80,7 +80,7 @@ export const solutions: Solution[] = [
       "Visão clara do que está funcionando e do que precisa de atenção",
     ],
     example:
-      "Em vez de montar o relatório do mês na mão, o gestor abre o painel, filtra o período e exporta o resultado em poucos cliques.",
+      "O gestor de uma distribuidora junta vendas e pedidos de três planilhas para montar o relatório do mês. Com o painel, ele escolhe o período, vê vendas por produto e atendimentos por dia e exporta o resultado em Excel ou PDF em poucos cliques.",
   },
   {
     id: "sites",
@@ -95,22 +95,22 @@ export const solutions: Solution[] = [
       "Botões diretos para conversar pelo WhatsApp",
     ],
     example:
-      "Uma página de campanha explica a oferta em poucas seções e leva o visitante direto para uma conversa no WhatsApp, já com a mensagem inicial preenchida.",
+      "Uma prestadora de serviços local só aparece por indicação. Uma página de campanha explica a oferta em poucas seções, mostra como funciona e leva o visitante direto para o WhatsApp, já com a mensagem inicial preenchida.",
   },
   {
     id: "ia",
     icon: Bot,
     title: "Assistentes com inteligência artificial",
-    text: "Assistentes treinados com as informações da empresa para tirar dúvidas, qualificar contatos e apoiar a equipe.",
+    text: "Assistentes que usam as informações da sua empresa para tirar dúvidas, identificar quem tem interesse e apoiar a equipe.",
     forWho:
       "Equipes que repetem as mesmas explicações todos os dias e querem apoio no atendimento e nas tarefas internas.",
     benefits: [
-      "Assistente alimentado com as informações da própria empresa",
-      "Responde dúvidas e qualifica contatos antes da equipe",
+      "Assistente que responde com base nas informações da própria empresa",
+      "Responde dúvidas e identifica quem tem interesse antes de passar para a equipe",
       "Encaminha para uma pessoa quando o assunto exige atenção humana",
       "Apoia a equipe em tarefas repetitivas, com regras claras sobre o que pode e não pode fazer",
     ],
     example:
-      "O assistente responde dúvidas sobre produtos e condições com base no material da empresa e, quando a pergunta foge do que ele sabe, passa a conversa para um atendente.",
+      "Uma loja repete todo dia as mesmas respostas sobre prazo, trocas e formas de pagamento. O assistente responde com base no material da própria loja e, quando a pergunta foge do que foi configurado, encaminha a conversa para um atendente.",
   },
 ];

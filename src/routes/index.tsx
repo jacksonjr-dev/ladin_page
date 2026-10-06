@@ -5,9 +5,10 @@ import { RevealItem, RevealList } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand, Section } from "@/components/section";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import { steps } from "@/lib/process";
 import { solutions } from "@/lib/solutions";
 
-const TITLE = "JPGLabs | Transformando processos em soluções";
+const TITLE = "JPGLabs | Automações, sistemas e sites para a sua empresa";
 const DESCRIPTION =
   "A JPGLabs cria automações, sistemas, sites e assistentes com IA para simplificar o dia a dia da sua empresa. Converse com a gente pelo WhatsApp.";
 
@@ -41,7 +42,7 @@ const pillars = [
 const signs = [
   {
     title: "O WhatsApp não para",
-    text: "A equipe passa o dia respondendo as mesmas perguntas e, mesmo assim, algumas mensagens ficam sem resposta.",
+    text: "A equipe passa o dia respondendo às mesmas perguntas e, mesmo assim, algumas mensagens ficam sem resposta.",
   },
   {
     title: "Tudo vive em planilhas",
@@ -65,25 +66,6 @@ const signs = [
   },
 ];
 
-const differentials = [
-  {
-    title: "Conversa direta",
-    text: "Você fala com quem vai construir a solução, sem intermediários e sem burocracia.",
-  },
-  {
-    title: "Linguagem simples",
-    text: "Explicamos o que será feito, por que e o que muda para você, sem jargão.",
-  },
-  {
-    title: "Feito para o seu processo",
-    text: "A solução se adapta ao jeito que a sua empresa trabalha, e não o contrário.",
-  },
-  {
-    title: "Começo pequeno, ganho real",
-    text: "Dá para começar por uma parte do problema, ver o resultado e só então crescer.",
-  },
-];
-
 const faq = [
   {
     question: "A JPGLabs atende qualquer tipo de empresa?",
@@ -93,17 +75,12 @@ const faq = [
   {
     question: "Por onde começar?",
     answer:
-      "Pela conversa. Você explica o que incomoda no dia a dia e nós sugerimos o próximo passo, que pode ser uma solução pequena para começar.",
+      "Pela conversa. Chame a gente pelo WhatsApp ou pelo Instagram com uma mensagem curta sobre o desafio. A partir daí sugerimos o próximo passo, que pode ser uma solução pequena para começar.",
   },
   {
     question: "Preciso saber de tecnologia?",
     answer:
       "Não. Cuidamos da parte técnica e explicamos tudo em linguagem direta. Você participa das decisões que são do seu negócio.",
-  },
-  {
-    question: "Como funciona o primeiro contato?",
-    answer:
-      "Você nos chama pelo WhatsApp com uma mensagem curta sobre o desafio. A partir daí combinamos a melhor forma de entender o seu processo.",
   },
 ];
 
@@ -117,7 +94,7 @@ function HomePage() {
             Transformando processos em <span>soluções.</span>
           </>
         }
-        description="Ideias, processos e soluções reunidos em um só lugar. Criamos automações, sistemas, sites e assistentes que tiram o trabalho repetitivo do caminho da sua equipe. Conte o que sua empresa precisa e vamos pensar juntos no próximo passo."
+        description="Criamos automações, sistemas, sites e assistentes que tiram o trabalho repetitivo do caminho da sua equipe. Conte o que sua empresa precisa e vamos pensar juntos no próximo passo."
       >
         <WhatsAppButton />
         <Link to="/solucoes" className="ghost-link">
@@ -145,7 +122,7 @@ function HomePage() {
       <Section
         id="what-title"
         title="O que podemos construir"
-        intro="Seis soluções para começar. Cada uma resolve um tipo de problema, e todas podem ser conectadas."
+        intro="Seis soluções para começar. Cada uma resolve um tipo de problema, e muitas podem ser conectadas entre si."
       >
         <RevealList className="solutions">
           {solutions.map(({ id, icon: Icon, title, text }) => (
@@ -156,7 +133,7 @@ function HomePage() {
               <h3>{title}</h3>
               <p>{text}</p>
               <Link to="/solucoes" hash={id} className="solution-link">
-                Saiba mais
+                Saiba mais<span className="sr-only"> sobre {title}</span>
                 <ArrowRight size={14} aria-hidden="true" />
               </Link>
             </RevealItem>
@@ -165,11 +142,18 @@ function HomePage() {
       </Section>
 
       <Section
-        id="different-title"
-        title="Como trabalhamos com você"
-        intro="O que você pode esperar de uma conversa com a JPGLabs."
+        id="how-title"
+        title="Como funciona, em quatro etapas"
+        intro="Da primeira conversa até a solução funcionando. Cada etapa termina com algo concreto para você."
       >
-        <CardGrid items={differentials} columns={4} />
+        <RevealList className="steps steps-4">
+          {steps.map((step) => (
+            <RevealItem key={step.title} className="step">
+              <h3>{step.title}</h3>
+              <p>{step.summary}</p>
+            </RevealItem>
+          ))}
+        </RevealList>
         <p className="section-link">
           <Link to="/como-trabalhamos" className="ghost-link">
             Ver o passo a passo completo
