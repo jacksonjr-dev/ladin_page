@@ -10,7 +10,7 @@ export const Route = createFileRoute("/sobre")({
       path: "/sobre",
       title: "Sobre nós | JPGLabs",
       description:
-        "Conheça a JPGLabs: o que nos move, como pensamos tecnologia e os valores que guiam cada projeto.",
+        "Conheça a JPGLabs, de Fortaleza para todo o Brasil: o que nos move, como pensamos tecnologia e os valores que guiam cada projeto.",
     }),
   component: AboutPage,
 });
@@ -54,6 +54,10 @@ const faq = [
       "Porque tecnologia por si só não resolve nada. Cada decisão em um projeto precisa ter um motivo claro ligado ao que a sua empresa quer alcançar.",
   },
   {
+    question: "Onde fica a JPGLabs e quem vocês atendem?",
+    answer: "A JPGLabs é de Fortaleza, no Ceará, e atende empresas da região e de todo o Brasil.",
+  },
+  {
     question: "Como posso falar com a equipe?",
     answer:
       "Pelo WhatsApp ou pelo Instagram. A página de Contato tem o número do WhatsApp e uma mensagem inicial já pronta.",
@@ -85,6 +89,16 @@ function AboutPage() {
             informações espalhadas e processos que dependem de muita gente lembrando de tudo. É
             nesse espaço que atuamos: tirando o peso do que é repetitivo para que a equipe foque no
             que realmente importa.
+          </p>
+        </div>
+      </Section>
+
+      <Section id="place-title" title="De Fortaleza para todo o Brasil">
+        <div className="prose-block">
+          <p className="prose">
+            Somos de Fortaleza e atendemos empresas da nossa região e de todo o Brasil. O ponto de
+            partida é sempre o mesmo, esteja a sua empresa na nossa cidade ou do outro lado do país:
+            uma conversa sobre o seu processo.
           </p>
         </div>
       </Section>

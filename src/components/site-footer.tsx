@@ -19,6 +19,7 @@ export function SiteFooter() {
               em soluções.
             </p>
             <span className="footer-signature">Tecnologia com propósito.</span>
+            <span className="footer-location">Fortaleza, CE · Atendimento em todo o Brasil</span>
           </div>
           <nav className="footer-column" aria-label="Empresa">
             <h3>Empresa</h3>

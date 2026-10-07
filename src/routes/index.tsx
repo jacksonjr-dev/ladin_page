@@ -9,9 +9,9 @@ import { steps } from "@/lib/process";
 import { solutions } from "@/lib/solutions";
 import { organizationJsonLd, pageHead } from "@/lib/seo";
 
-const TITLE = "JPGLabs | Automações, sistemas e sites para a sua empresa";
+const TITLE = "JPGLabs | Automação, sistemas e sites em Fortaleza e Brasil";
 const DESCRIPTION =
-  "A JPGLabs cria automações, sistemas, sites e assistentes com IA para simplificar o dia a dia da sua empresa. Converse com a gente pelo WhatsApp.";
+  "A JPGLabs, de Fortaleza, cria automações, sistemas, sites e assistentes com IA para empresas da região e de todo o Brasil. Converse pelo WhatsApp.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -68,6 +68,11 @@ const faq = [
     question: "A JPGLabs atende qualquer tipo de empresa?",
     answer:
       "Atendemos empresas que querem simplificar processos, seja no atendimento, na gestão, nos agendamentos ou na presença online. Se você não tem certeza de que faz sentido para o seu caso, conte a situação pelo WhatsApp e respondemos com sinceridade.",
+  },
+  {
+    question: "Vocês atendem fora de Fortaleza?",
+    answer:
+      "Sim. Somos de Fortaleza e atendemos empresas da região e de todo o Brasil. Pelo WhatsApp conseguimos conversar com você onde estiver.",
   },
   {
     question: "Por onde começar?",

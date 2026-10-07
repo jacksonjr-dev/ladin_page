@@ -55,6 +55,16 @@ export function organizationJsonLd(description: string) {
     name: siteName,
     description,
     ...(siteUrl ? { url: siteUrl, logo: `${siteUrl}/favicon-192.png` } : {}),
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Fortaleza",
+      addressRegion: "CE",
+      addressCountry: "BR",
+    },
+    areaServed: [
+      { "@type": "City", name: "Fortaleza" },
+      { "@type": "Country", name: "Brasil" },
+    ],
     sameAs: [contact.instagramUrl],
     contactPoint: [
       {
