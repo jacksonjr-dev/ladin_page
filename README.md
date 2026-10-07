@@ -38,6 +38,13 @@ o endereço manualmente, crie `VITE_SITE_URL` (veja `.env.example`) apenas no am
 **Atenção:** em _Settings → Deployment Protection_, o endereço de produção precisa estar público, senão o
 Google não consegue acessar o site.
 
+## Deploy (Netlify)
+
+O Netlify usa o plugin oficial do TanStack Start. Conecte este repositório no Netlify com a pasta raiz
+do projeto (`ladin_page`), comando `npm run build` e diretório de publicação `dist/client`. O build
+gera os arquivos do navegador em `dist/client` e configura a função SSR do servidor automaticamente.
+Não faça deploy enviando apenas `dist/client` manualmente, pois isso deixaria de fora o servidor SSR.
+
 ## Aparecer no Google
 
 O site já entrega `sitemap.xml` e `robots.txt` (gerados com o endereço de cada requisição), título e
