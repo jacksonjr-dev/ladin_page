@@ -13,6 +13,7 @@ import { MotionConfig, motion } from "motion/react";
 import type { ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import { Analytics } from "../components/analytics";
 import { ScrollProgress } from "../components/reveal";
 import { SiteFooter } from "../components/site-footer";
 import { SiteHeader } from "../components/site-header";
@@ -136,6 +137,7 @@ function RootComponent() {
       </a>
       <MotionConfig reducedMotion="user">
         <ScrollProgress />
+        <Analytics />
         <SiteHeader />
         <motion.div
           key={pathname}

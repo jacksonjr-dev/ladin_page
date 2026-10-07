@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ComoTrabalhamosRouteImport } from './routes/como-trabalhamos'
 import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SobreRouteImport } from './routes/sobre'
@@ -31,6 +32,11 @@ const ComoTrabalhamosRoute = ComoTrabalhamosRouteImport.update({
 const ContatoRoute = ContatoRouteImport.update({
   id: '/contato',
   path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacidadeRoute = PrivacidadeRouteImport.update({
+  id: '/privacidade',
+  path: '/privacidade',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
@@ -63,6 +69,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/como-trabalhamos': typeof ComoTrabalhamosRoute
   '/contato': typeof ContatoRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
@@ -73,6 +80,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/como-trabalhamos': typeof ComoTrabalhamosRoute
   '/contato': typeof ContatoRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
@@ -84,6 +92,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/como-trabalhamos': typeof ComoTrabalhamosRoute
   '/contato': typeof ContatoRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
@@ -96,6 +105,7 @@ export interface FileRouteTypes {
     | '/'
     | '/como-trabalhamos'
     | '/contato'
+    | '/privacidade'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/sobre'
@@ -106,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/como-trabalhamos'
     | '/contato'
+    | '/privacidade'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/sobre'
@@ -116,6 +127,7 @@ export interface FileRouteTypes {
     | '/'
     | '/como-trabalhamos'
     | '/contato'
+    | '/privacidade'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/sobre'
@@ -127,6 +139,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ComoTrabalhamosRoute: typeof ComoTrabalhamosRoute
   ContatoRoute: typeof ContatoRoute
+  PrivacidadeRoute: typeof PrivacidadeRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
@@ -155,6 +168,13 @@ declare module '@tanstack/react-router' {
       path: '/contato'
       fullPath: '/contato'
       preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacidade': {
+      id: '/privacidade'
+      path: '/privacidade'
+      fullPath: '/privacidade'
+      preLoaderRoute: typeof PrivacidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/robots.txt': {
@@ -199,6 +219,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ComoTrabalhamosRoute: ComoTrabalhamosRoute,
   ContatoRoute: ContatoRoute,
+  PrivacidadeRoute: PrivacidadeRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,

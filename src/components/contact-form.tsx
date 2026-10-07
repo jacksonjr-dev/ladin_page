@@ -3,6 +3,7 @@ import { useRef, useState, type CSSProperties, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { trackFormSubmit } from "@/lib/analytics";
 import { buildContactFormUrl, contactFormSchema, type ContactFormValues } from "@/lib/contact";
 
 type Field = keyof ContactFormValues;
@@ -41,6 +42,7 @@ export function ContactForm() {
     setErrors({});
     window.open(buildContactFormUrl(result.data), "_blank", "noopener,noreferrer");
     setOpened(true);
+    trackFormSubmit();
   };
 
   const fieldProps = (field: Field) => ({

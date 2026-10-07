@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Instagram, MessageCircle } from "lucide-react";
 import { Brand } from "@/components/brand";
+import { CONSENT_EVENT, trackingConfigured } from "@/lib/analytics";
 import { contact } from "@/lib/contact";
 import { navItems } from "@/lib/site";
 
@@ -58,6 +59,18 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="footer-bottom">
+          <span className="footer-legal">
+            <Link to="/privacidade">Política de privacidade</Link>
+            {trackingConfigured && (
+              <button
+                type="button"
+                className="footer-link-button"
+                onClick={() => window.dispatchEvent(new Event(CONSENT_EVENT))}
+              >
+                Preferências de cookies
+              </button>
+            )}
+          </span>
           <span>© {new Date().getFullYear()} JPGLabs. Todos os direitos reservados.</span>
         </div>
       </div>

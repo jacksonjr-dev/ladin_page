@@ -53,3 +53,20 @@ que só o dono do site faz:
 
 A indexação leva de dias a semanas. Aparecer para buscas como "automação de WhatsApp" depende, além do
 site estar no ar, de conteúdo relevante e de links de outros sites apontando para ele.
+
+## Tráfego pago e medição (Google Ads)
+
+O site já está preparado para medir conversas no WhatsApp. Nada é carregado, e o aviso de cookies nem
+aparece, até você configurar os códigos (veja `.env.example`):
+
+| Variável                   | O que é                                             |
+| -------------------------- | --------------------------------------------------- |
+| `VITE_GA_MEASUREMENT_ID`   | ID do Google Analytics 4 (`G-…`)                    |
+| `VITE_GADS_ID`             | ID da conta do Google Ads (`AW-…`)                  |
+| `VITE_GADS_WHATSAPP_LABEL` | Rótulo da conversão "Conversa no WhatsApp"          |
+| `VITE_GADS_LEAD_LABEL`     | Rótulo da conversão "Formulário enviado" (opcional) |
+
+Crie as variáveis na Vercel (_Settings → Environment Variables_, ambiente _Production_) e faça um novo
+deploy. Os scripts do Google só carregam depois que o visitante aceita os cookies (LGPD). Cada clique em
+um botão ou link do WhatsApp gera o evento `whatsapp_click`, e o envio do formulário gera `generate_lead`.
+A página `/privacidade` explica o tratamento de dados e deve ser revisada por quem cuida do jurídico.
